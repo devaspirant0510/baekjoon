@@ -2,21 +2,20 @@
 int main(){
 	int n,i,el,min,max;
 	scanf("%d",&n);
-	int arr[n];
+	
+	min = 10000001;
+	max = -10000001;
 	for (i=0; i<n; i++){
 		scanf("%d",&el);
-		arr[i]=el;
+		if (el<=min){
+			min=el;
+		}
+		else if (el>=max){
+			max = el;
+		}
 	} 
-	min = arr[0];
-	max = arr[0];
-	for (i=1; i<n; i++){
-		if (arr[i]<min){
-			min = arr[i];
-		}
-		if (arr[i]>max){
-			max = arr[i];
-		}
-	}
+	
+
 	printf("%d %d",min,max);
 	return 0;
 }
